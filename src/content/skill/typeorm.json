@@ -1,0 +1,8 @@
+{
+    "name": "TypeORM",
+    "icon": "/img/icos/typeorm.svg",
+    "color": "#18191A",
+    "colorText": "#fff",
+    "level": 90,
+    "category": "Language"
+}

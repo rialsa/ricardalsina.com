@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
+---
+
+<BaseLayout title='Contact' subtitle="Let's build something awesome together">
+  <div class='mb-10'>
+    I'm always eager to discuss new projects and opportunities.
+  </div>
+  <div class='mb-2 text-xl'>
+    <a
+      class='inline-flex items-center py-1 hover:border-opacity-100 border-green-300 transition- duration-300 ease-in-out border-b-2 border-opacity-0'
+      href='mailto:hello@ricardalsina.com'
+    >
+      <Image
+        width={30}
+        height={30}
+        class='inline-block w-10 h-10 mr-4 text-green-300'
+        src='/img/icos/email.svg'
+        alt='Email icon'
+      />
+      <span> hello@ricardalsina.com </span>
+    </a>
+  </div>
+  <div class='text-xl'>
+    <a
+      class='inline-flex items-center py-1 hover:border-opacity-100 border-green-300 transition- duration-300 ease-in-out border-b-2 border-opacity-0'
+      href='tel:+34665041266'
+    >
+      <Image
+        width={30}
+        height={30}
+        class='inline-block w-10 h-10 mr-4 text-green-300'
+        src='/img/icos/phone.svg'
+        alt='Phone icon'
+      />
+      <span>+34 665 041 266</span>
+    </a>
+  </div>
+</BaseLayout>

@@ -1,0 +1,8 @@
+{
+    "name": "supabase",
+    "icon": "/img/icos/supabase.svg",
+    "color": "#3FCE8E",
+    "colorText": "#fff",
+    "level": 90,
+    "category": "Language"
+}

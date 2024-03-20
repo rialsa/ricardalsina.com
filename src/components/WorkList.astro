@@ -1,0 +1,16 @@
+---
+import WorkCard from './WorkCard.astro'
+import type { CollectionEntry } from 'astro:content'
+
+type Props = {
+  list: CollectionEntry<'work'>[]
+}
+
+const { list } = Astro.props
+---
+
+<div
+  class='grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 min-[1700px]:grid-cols-4 gap-10'
+>
+  {list.map((work) => <WorkCard work={work} />)}
+</div>

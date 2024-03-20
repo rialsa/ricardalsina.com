@@ -1,0 +1,109 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import Nav from '@/components/Layout/Nav.astro'
+import Footer from '@/components/Layout/Footer.astro'
+import MobileHeader from '@/components/Layout/MobileHeader'
+import DesktopAside from '@/components/Layout/DesktopAside.astro'
+let { title, section, subtitle } = Astro.props
+if (!title) {
+  title = 'Ricard Alsina'
+}
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>
+      {
+        `
+      Ricard Alsina  ${title === 'Ricard Alsina' ? '|  Full stack Web Developer 💻' : `|  ${title} `}
+      `
+      }
+    </title>
+    <ViewTransitions />
+  </head>
+  <body class=''>
+    <div class='relative md:flex h-screen'>
+      <div class='md:hidden'>
+        <MobileHeader client:idle>
+          <Nav />
+        </MobileHeader>
+      </div>
+      <div class='hidden md:block'>
+        <DesktopAside />
+      </div>
+
+      <div
+        class='flex-1 p-10 md:px-20 min-h-screen overflow-y-auto flex flex-col'
+      >
+        <main
+          transition:animate='fade'
+          class='text-indigo-900 flex-1 flex flex-col mb-20'
+        >
+          {
+            section ? (
+              <div class='font-bold mb-2'>
+                <a
+                  href={`/${section.toLowerCase()}`}
+                  class='inline text-6xl text-indigo-200
+                  hover:border-opacity-100
+                  border-b-4 border-opacity-0 border-indigo-200 transition-all duration-300 ease-in-out '
+                  transition:name='title'
+                  transition:animate='none'
+                >
+                  {section}
+                </a>
+                <span class='text-6xl text-indigo-200'>/</span>
+                <h1
+                  class='lg:inline text-4xl text-indigo-400'
+                  transition:animate='slide'
+                >
+                  {title}
+                </h1>
+              </div>
+            ) : (
+              <h1
+                class='text-6xl font-bold text-indigo-400 mb-2'
+                transition:name='title'
+                transition:animate='slide'
+              >
+                {title}
+              </h1>
+            )
+          }
+
+          {subtitle && <p class='text-3xl text-indigo-200'>{subtitle}</p>}
+          <div class='font-mono mt-10 md:mt-20 text-green-300'>
+            <slot />
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </div>
+    <style is:global>
+      ::-moz-selection {
+        /* Firefox */
+        color: #000;
+        background: #dcfce7;
+      }
+
+      ::selection {
+        color: #000;
+        background: #dcfce7;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        background-color: #0c0c0c;
+      }
+    </style>
+  </body>
+</html>

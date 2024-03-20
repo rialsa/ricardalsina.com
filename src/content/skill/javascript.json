@@ -1,0 +1,8 @@
+{
+    "name": "JavaScript",
+    "icon": "/img/icos/javascript.svg",
+    "color": "#F0DB4F",
+    "colorText": "#000000",
+    "level": 90,
+    "category": "Language"
+}

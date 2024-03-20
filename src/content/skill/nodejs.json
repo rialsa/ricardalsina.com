@@ -1,0 +1,8 @@
+{
+    "name": "Node.js",
+    "icon": "/img/icos/nodejs.svg",
+    "color": "#60B248",
+    "colorText": "#fff",
+    "level": 90,
+    "category": "Language"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "php",
+    "icon": "/img/icos/php-2.svg",
+    "color": "#7A86B8",
+    "colorText": "#fff",
+    "level": 90,
+    "category": "Language"
+}

@@ -1,0 +1,36 @@
+---
+// get the path of the current page
+const pathname = new URL(Astro.request.url).pathname
+const path = pathname === '/' ? '/' : pathname
+const section = `/${path.split('/')[1]}`
+
+const routes: Record<string, string> = {
+  '/': 'Home',
+  '/work': 'Work',
+  // '/skills': 'Skills',
+  // '/about': 'About me',
+  '/contact': 'Contact',
+}
+---
+
+<nav
+  class='my-28 md:my-10 text-center text-lg font-semibold text-indigo-300 m-auto'
+>
+  <ul>
+    {
+      Object.keys(routes).map((route) => {
+        return (
+          <li class='my-6 md:my-2'>
+            <a
+              class={`${section === route ? 'text-white' : 'hover:border-opacity-100'} 
+              border-b-2 border-opacity-0 border-indigo-300 transition-all duration-300 ease-in-out `}
+              href={route}
+            >
+              {routes[route]}
+            </a>
+          </li>
+        )
+      })
+    }
+  </ul>
+</nav>

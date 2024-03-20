@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+
+import SkillChip from '@/components/UI/SkillChip.astro'
+
+export async function getStaticPaths() {
+  const works = await getCollection('work')
+  return works.map((work) => ({
+    params: { slug: work.slug },
+    props: { work },
+  }))
+}
+
+type Props = {
+  work: CollectionEntry<'work'>
+}
+
+const { work } = Astro.props
+const { Content } = await work.render()
+---
+
+<BaseLayout section='Work' title={work.data.title}>
+  <p class='text-xl font-bold mb-2' transition:name={`title-${work.slug}`}>
+    {work.data.description}
+  </p>
+  <p
+    class='text font-bold text-indigo-300 mb-4'
+    transition:name={`description-${work.slug}`}
+  >
+    {work.data.product}
+  </p>
+  {
+    work.data.skills && work.data.skills.length > 0 && (
+      <div
+        class='flex flex-wrap gap-4 mt-2 mb-10'
+        transition:name={`skills-${work.slug}`}
+      >
+        {work.data.skills.map((skill) => (
+          <SkillChip id={skill.id} />
+        ))}
+      </div>
+    )
+  }
+  <Content />
+</BaseLayout>
