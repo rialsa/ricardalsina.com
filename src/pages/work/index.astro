@@ -4,9 +4,7 @@ import WorkList from '@/components/WorkList.astro'
 import { getCollection } from 'astro:content'
 
 const worksList = await getCollection('work')
-const sortedList = worksList.sort(
-  (a, b) => new Date(b.data.date) - new Date(a.data.date)
-)
+const sortedList = worksList.sort((a: any, b: any) => b.data.date - a.data.date)
 ---
 
 <BaseLayout title='Work' subtitle='Some projects shaping my journey'>
