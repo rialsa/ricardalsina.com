@@ -18,6 +18,8 @@ jobs:
         key: ${{ secrets.SSH_PRIVKEY }}
         port: 22
         script: |
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
           cd /home/sites/ricardalsina.com
           git pull origin main
           git status
