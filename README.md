@@ -33,18 +33,18 @@ Tailwind.
 Here's a glimpse of what's in store:
 
 - 📱 Responsive layout ✅
-- 🏠 Initial pages (Home / Work / Contact)
+- 🏠 Initial pages (Home / Work / Contact) ✅
 - 🚀 Deploy
-- 🤖 Github Actions - CI
+- 🤖 Github Actions - CI/CD
 - 📝 Initial content
 - 🌐 Extra pages (About / Skills)
 - 🔄 Continuously update content (fingers crossed...)
 
 ### Site Pages in the Pipeline 🛠️
 
-- 🏠 Home
+- 🏠 Home ✅
 - 🧑‍💼 About
-- 📧 Contact
+- 📧 Contact ✅
 - 💼 Skills
 - 🛠️ Work
   - 📚 List ✅
