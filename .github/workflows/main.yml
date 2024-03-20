@@ -18,7 +18,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVKEY }}
         port: 22
         script: |
-          cd ~/home/sites/ricardalsina.com
+          cd /home/sites/ricardalsina.com
           git pull origin master
           git status
           pnpm i
