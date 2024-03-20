@@ -1,13 +1,17 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
+import Title from '@/components/Layout/Title.astro'
 import Nav from '@/components/Layout/Nav.astro'
 import Footer from '@/components/Layout/Footer.astro'
 import MobileHeader from '@/components/Layout/MobileHeader'
 import DesktopAside from '@/components/Layout/DesktopAside.astro'
-let { title, section, subtitle } = Astro.props
-if (!title) {
-  title = 'Ricard Alsina'
-}
+const { title, section, subtitle, pageDescription } = Astro.props
+
+const seoTitle = `Ricard Alsina | ${title ? title : 'Full stack Web Developer 💻'}`
+const pageTitle = title ? title : 'Ricard Alsina'
+const seoDescription = pageDescription
+  ? pageDescription
+  : "Passionate full stack web dev open to freelance. Let's create something awesome! 🚀"
 ---
 
 <html lang='en'>
@@ -16,13 +20,8 @@ if (!title) {
     <link rel='icon' type='image/x-icom' href='/dev.ico' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>
-      {
-        `
-      Ricard Alsina  ${title === 'Ricard Alsina' ? '|  Full stack Web Developer 💻' : `|  ${title} `}
-      `
-      }
-    </title>
+    <meta name='description' content={seoDescription} />
+    <title>{seoTitle}</title>
     <ViewTransitions />
   </head>
   <body class=''>
@@ -43,39 +42,8 @@ if (!title) {
           transition:animate='fade'
           class='text-indigo-900 flex-1 flex flex-col mb-20'
         >
-          {
-            section ? (
-              <div class='font-bold mb-2'>
-                <a
-                  href={`/${section.toLowerCase()}`}
-                  class='inline text-6xl text-indigo-200
-                  hover:border-opacity-100
-                  border-b-4 border-opacity-0 border-indigo-200 transition-all duration-300 ease-in-out '
-                  transition:name='title'
-                  transition:animate='none'
-                >
-                  {section}
-                </a>
-                <span class='text-6xl text-indigo-200'>/</span>
-                <h1
-                  class='lg:inline text-4xl text-indigo-400'
-                  transition:animate='slide'
-                >
-                  {title}
-                </h1>
-              </div>
-            ) : (
-              <h1
-                class='text-6xl font-bold text-indigo-400 mb-2'
-                transition:name='title'
-                transition:animate='slide'
-              >
-                {title}
-              </h1>
-            )
-          }
+          <Title section={section} title={pageTitle} subtitle={subtitle} />
 
-          {subtitle && <p class='text-3xl text-indigo-200'>{subtitle}</p>}
           <div class='font-mono mt-10 md:mt-20 text-green-300'>
             <slot />
           </div>
