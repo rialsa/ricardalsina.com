@@ -2,7 +2,7 @@
     "name": "React.js",
     "icon": "/img/icos/react.svg",
     "color": "#61DAFB",
-    "colorText": "#fff",
+    "colorText": "#000",
     "level": 90,
     "category": "Language"
 }

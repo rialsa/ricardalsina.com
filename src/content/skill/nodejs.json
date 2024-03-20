@@ -2,7 +2,7 @@
     "name": "Node.js",
     "icon": "/img/icos/nodejs.svg",
     "color": "#60B248",
-    "colorText": "#fff",
+    "colorText": "#000",
     "level": 90,
     "category": "Language"
 }

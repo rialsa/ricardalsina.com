@@ -2,7 +2,7 @@
     "name": "supabase",
     "icon": "/img/icos/supabase.svg",
     "color": "#3FCE8E",
-    "colorText": "#fff",
+    "colorText": "#000",
     "level": 90,
     "category": "Language"
 }

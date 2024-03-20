@@ -63,21 +63,7 @@ const MobileHeader = ({ children }: Props) => {
             fixed z-10 w-full h-full bg-black  backdrop-blur-sm transition-all duration-300 ease-in-out
             `}
         onClick={toggleNav}
-      >
-        {/* <div
-          className='fixed top-0 end-0 bg-black bg-opacity-60 backdrop-blur-sm'
-          onClick={toggleNav}
-        >
-      
-        </div> */}
-        {/* <nav
-          className={`
-            ${showNav ? 'w-[250px]' : 'w-0'}
-          absolute top-0 h-full end-0  bg-indigo-900 p-10 text-indigo-400 transition-all duration-300 ease-in-out`}
-        >
-          {children}
-        </nav> */}
-      </div>
+      ></div>
 
       {/* page padding top */}
       <div className='p-9'></div>
