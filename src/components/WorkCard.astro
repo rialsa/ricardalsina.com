@@ -19,6 +19,8 @@ const { work } = Astro.props
   {
     work.data.thumbnail && (
       <Image
+        height={160}
+        width={330}
         class='w-full h-40 object-cover object-center'
         src={work.data.thumbnail}
         alt={work.data.title}
