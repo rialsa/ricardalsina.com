@@ -19,7 +19,7 @@ jobs:
         port: 22
         script: |
           cd /home/sites/ricardalsina.com
-          git pull origin master
+          git pull origin main
           git status
           pnpm i
           pnpm build
