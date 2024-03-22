@@ -4,11 +4,17 @@ type Props = {
   children: React.ReactNode
 }
 
-const MobileHeader = ({ children }: Props) => {
+const MobileHeader = ({ children: Nav }: Props) => {
   const [showNav, setShowNav] = useState(false)
 
   const toggleNav = () => {
-    console.log('toggleNav')
+    // make body not scrollable
+    if (!showNav) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+
     setShowNav(!showNav)
   }
 
@@ -16,7 +22,7 @@ const MobileHeader = ({ children }: Props) => {
     <Fragment>
       <div
         className='fixed z-30 flex items-center cursor-pointer right-10 top-6 text-4xl text-indigo-300'
-        onClick={() => setShowNav(!showNav)}
+        onClick={toggleNav}
       >
         {showNav ? (
           <svg
@@ -41,7 +47,7 @@ const MobileHeader = ({ children }: Props) => {
           showNav ? 'translate-x-0 ' : 'translate-x-full'
         }`}
       >
-        <h3 className='mt-20 text-4xl font-semibold text-white'>{children}</h3>
+        <div className='mt-20 text-4xl font-semibold text-white'>{Nav}</div>
       </div>
 
       <header className='fixed flex justify-between items-center w-full z-10 top-0 start-0 shadow-md bg-indigo-950 py-4 px-6'>
