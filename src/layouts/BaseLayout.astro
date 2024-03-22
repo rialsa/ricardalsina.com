@@ -5,7 +5,8 @@ import Nav from '@/components/Layout/Nav.astro'
 import Footer from '@/components/Layout/Footer.astro'
 import MobileHeader from '@/components/Layout/MobileHeader'
 import DesktopAside from '@/components/Layout/DesktopAside.astro'
-const { title, section, subtitle, pageDescription } = Astro.props
+const { title, section, subtitle, pageDescription, bgColor, txtColor, font } =
+  Astro.props
 
 const seoTitle = `Ricard Alsina | ${title ? title : 'Full stack Web Developer 💻'}`
 const pageTitle = title ? title : 'Ricard Alsina'
@@ -24,7 +25,7 @@ const seoDescription = pageDescription
     <title>{seoTitle}</title>
     <ViewTransitions />
   </head>
-  <body class=''>
+  <body class={bgColor}>
     <div class='relative md:flex h-screen'>
       <div class='md:hidden'>
         <MobileHeader client:idle>
@@ -44,7 +45,9 @@ const seoDescription = pageDescription
         >
           <Title section={section} title={pageTitle} subtitle={subtitle} />
 
-          <div class='font-mono mt-10 md:mt-20 text-green-300'>
+          <div
+            class={`${font ? font : ''} mt-10 md:mt-20 ${txtColor ? txtColor : 'text-green-300 '}`}
+          >
             <slot />
           </div>
         </main>

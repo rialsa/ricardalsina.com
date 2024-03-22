@@ -7,16 +7,16 @@ const { section, title, subtitle } = Astro.props
     <div class='font-bold mb-2'>
       <a
         href={`/${section.toLowerCase()}`}
-        class='inline text-6xl text-indigo-200
+        class='inline text-6xl text-indigo-400
           hover:border-opacity-100
-          border-b-4 border-opacity-0 border-indigo-200 transition-all duration-300 ease-in-out pr-1'
+          border-b-4 border-opacity-0 border-indigo-400 transition-all duration-300 ease-in-out pr-1'
         transition:name='title'
         transition:animate='none'
       >
         {section}
       </a>
-      <span class='text-6xl text-indigo-200 mx-2'>/</span>
-      <h1 class='lg:inline text-4xl text-indigo-400' transition:animate='slide'>
+      <span class='text-6xl text-indigo-400 mx-2'>/</span>
+      <h1 class='lg:inline text-4xl text-indigo-600' transition:animate='slide'>
         {title}
       </h1>
     </div>

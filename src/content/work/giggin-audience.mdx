@@ -1,5 +1,5 @@
 ---
-title: Giggin audience app
+title: Giggin app
 product: SPA Web app
 description: Syncronized lightshows with the audience smartphones
 skills: ['react', 'typescript', 'socketio']
@@ -9,15 +9,128 @@ date: 2023-06-01
 ---
 
 import { Image } from 'astro:assets'
+import VideoViewer from '@/components/VideoViewer'
 
-##
+## Overview
+
+Giggin is an innovative web application designed to revolutionize live concert
+experiences by creating captivating smartphone light shows and facilitating
+interactive audience engagement features. This groundbreaking platform aims to
+enhance the enjoyment of concert-goers, elevating their experiences to
+unprecedented levels.
+
+The Giggin app offers a seamless and user-friendly interface for both audience
+members and event organizers, providing a dynamic and immersive environment
+during live performances.
+
+Let me share some videos so you can see the app in action.
+
+<div class='flex flex-wrap gap-8 mb-10'>
+  <div class='max-w-[275px]'>
+    <h4 class='font-bold text-indigo-500 mb-1'>Home test</h4>
+    <video controls src='/video/giggin/home-demo.mp4' />
+  </div>
+  <div class='max-w-[275px]'>
+    <h4 class='font-bold text-indigo-500 mb-1'>Giggin promo</h4>
+    <video controls src='/video/giggin/promo.mp4' />
+  </div>
+  <div class='max-w-[275px]'>
+    <h4 class='font-bold text-indigo-500 mb-1'>Audience record</h4>
+    <video controls src='/video/giggin/public.mp4' />
+  </div>
+</div>
+
+## Solution
+
+<div class="flex flex-wrap gap-10 items-center mb-10">
+
+  <div class='min-w-[200px] flex-1 order-1'>
+  ### Audience App 
+  
+    Built using React, the Audience App offers concert attendees **easy access** via a QR code scan.
+
+    Once inside, users can immerse themselves in mesmerizing **light shows** synchronized perfectly with the music.
+
+    Additionally, the app features a dedicated landing page offering exclusive content related to the concert, including artist **promotions**, merchandise, and music.
+
+  </div>
 
 <Image
   src='/img/work/giggin-audience/mock2.png'
   alt='thumbnail 1'
-  width={500}
+  width={350}
   height='1'
-  class='mt-8'
+  class='order-2'
 />
 
-I'm working on the content for this page. Please come back later. 
+</div>
+
+<div class="flex flex-wrap gap-4 md:gap-10 items-center mb-10">
+
+<Image
+  src='/img/work/giggin-audience/mock2.png'
+  alt='thumbnail 1'
+  width={350}
+  height='1'
+  class='xl:order-1 order-2'
+/>
+
+  <div class='min-w-[200px] flex-1 xl:order-2 order-1'>
+  ### Live App Control
+
+  Another React-based web application, the Live App Control, grants artists and
+  gig promoters **real-time control** over the audience experience.
+
+  Through this interface, organizers can curate content displayed on the Audience
+  App, ensuring a dynamic and engaging performance.
+
+  Furthermore, the Live App Control includes a **metronome feature** to assist
+  musicians during live performances if needed.
+
+  </div>
+
+</div>
+
+## Features
+
+<div class='flex flex-wrap gap-8 mb-10'>
+  <div class='flex-1 min-w-[200px]'>
+  ### Lightshow
+
+  The app synchronizes dazzling light displays with the music, enhancing the overall concert atmosphere.
+</div>
+  <div class='flex-1 min-w-[200px]'>
+  
+### Promotional Tools
+
+Artists can leverage the platform to promote their social media profiles, merchandise, and music directly to the audience.
+</div>
+  <div class='flex-1 min-w-[200px]'>
+  ### Audience Polls
+
+Engage concert-goers through interactive polling features, fostering a sense of community and participation.
+</div>
+</div>
+
+
+<div class='mb-10'>
+
+## Challenges
+
+- Ensuring seamless synchronization between multiple devices to maintain the immersive experience across the audience.
+- Addressing connectivity issues that may arise in certain venues to ensure uninterrupted functionality.
+
+</div>
+<div class='mb-10'>
+
+## Achievements
+
+- Optimizing the application for efficiency, resulting in a super-reduced bundle size for enhanced performance.
+- Garnering positive feedback and achieving successful performances, enhancing the reputation and credibility of the Giggin platform.
+
+</div>
+
+
+
+
+In conclusion, Giggin is not just a web app; it's a game-changer in the realm of live entertainment, providing an unparalleled fusion of technology and music to deliver unforgettable concert experiences.

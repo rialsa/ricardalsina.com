@@ -21,27 +21,72 @@ const { work } = Astro.props
 const { Content } = await work.render()
 ---
 
-<BaseLayout section='Work' title={work.data.title}>
-  <p class='text-xl font-bold mb-2' transition:name={`title-${work.slug}`}>
+<BaseLayout
+  section='Work'
+  title={work.data.title}
+  bgColor='bg-indigo-100'
+  txtColor='text-indigo-900'
+>
+  <p
+    class='text-xl md:text-2xl font-bold mb-2'
+    transition:name={`title-${work.slug}`}
+  >
     {work.data.description}
   </p>
   <p
-    class='text font-bold text-indigo-300 mb-4'
+    class='text font-bold text-indigo-500 mb-4'
     transition:name={`description-${work.slug}`}
   >
     {work.data.product}
   </p>
   {
     work.data.skills && work.data.skills.length > 0 && (
-      <div
-        class='flex flex-wrap gap-4 mt-2 mb-10'
-        transition:name={`skills-${work.slug}`}
-      >
-        {work.data.skills.map((skill) => (
-          <SkillChip id={skill.id} />
-        ))}
-      </div>
+      <>
+        <div class='inline-block py-2 px-4 bg-indigo-200 bg-opacity-50 rounded-md border-2 border-indigo-500 border-dashed mb-10'>
+          <div
+            class='flex flex-wrap gap-4'
+            transition:name={`skills-${work.slug}`}
+          >
+            {work.data.skills.map((skill) => (
+              <SkillChip id={skill.id} />
+            ))}
+          </div>
+        </div>
+      </>
     )
   }
-  <Content />
+  <div class='work-content max-w-[950px]'>
+    <Content />
+  </div>
 </BaseLayout>
+
+<style>
+  .work-content {
+    h2 {
+      font-size: 24px;
+      /* border-left: 0.1em solid black; */
+      padding-left: 1em;
+      font-weight: 600;
+      margin-bottom: 1.5em;
+      color: ##303f9f;
+      border-bottom: 0.01em solid #9fa8da;
+      padding-bottom: 0.5em;
+    }
+    h3 {
+      color: ##303f9f;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 1em;
+    }
+    p {
+      margin-bottom: 1.5em;
+      color: black;
+    }
+    li {
+      margin-bottom: 1em;
+      color: black;
+      list-style: disc;
+      margin-left: 2em;
+    }
+  }
+</style>
