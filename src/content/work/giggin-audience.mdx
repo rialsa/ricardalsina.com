@@ -9,7 +9,9 @@ date: 2023-06-01
 ---
 
 import { Image } from 'astro:assets'
+import Section from '@/components/UI/Section.astro'
 
+<Section>
 ## Overview
 
 Giggin is an innovative web application designed to revolutionize live concert
@@ -24,112 +26,119 @@ during live performances.
 
 Let me share some videos so you can see the app in action.
 
-<div class='flex flex-wrap gap-8 mb-10'>
-  <div class='max-w-[275px]'>
-    <h4 class='font-bold text-indigo-500 mb-1'>Home test</h4>
+<div class='flex flex-wrap gap-10 mb-10 justify-center'>
+  <div class='max-w-[285px]'>
+    <h4 class='font-thin text-indigo-900 mb-2 text-lg'>Home test</h4>
     <video controls src='/video/giggin/home-demo.mp4' />
   </div>
-  <div class='max-w-[275px]'>
-    <h4 class='font-bold text-indigo-500 mb-1'>Giggin promo</h4>
+  <div class='max-w-[285px]'>
+    <h4 class='font-thin text-indigo-900 mb-2 text-lg'>Giggin promo</h4>
     <video controls src='/video/giggin/promo.mp4' />
   </div>
-  <div class='max-w-[275px]'>
-    <h4 class='font-bold text-indigo-500 mb-1'>Audience record</h4>
+  <div class='max-w-[285px]'>
+    <h4 class='font-thin text-indigo-900 mb-2 text-lg'>Real concert</h4>
     <video controls src='/video/giggin/public.mp4' />
   </div>
 </div>
 
-## Solution
+</Section>
 
-<div class="flex flex-wrap gap-10 items-center mb-10">
+<Section>
 
-  <div class='min-w-[200px] flex-1 order-1'>
-  ### Audience App 
-  
-    Built using React, the Audience App offers concert attendees **easy access** via a QR code scan.
+  ## Solution
 
-    Once inside, users can immerse themselves in mesmerizing **light shows** synchronized perfectly with the music.
+  <div class="flex flex-wrap gap-10 items-center mb-10">
 
-    Additionally, the app features a dedicated landing page offering exclusive content related to the concert, including artist **promotions**, merchandise, and music.
+    <div class='min-w-[200px] flex-1 order-1'>
+      ### Audience App 
+    
+      Built using React, the Audience App offers concert attendees **easy access** via a QR code scan.
 
-  </div>
+      Once inside, users can immerse themselves in mesmerizing **light shows** synchronized perfectly with the music.
 
-<Image
-  src='/img/work/giggin-audience/mock2.png'
-  alt='thumbnail 1'
-  width={350}
-  height='1'
-  class='order-2'
-/>
+      Additionally, the app features a dedicated landing page offering exclusive content related to the concert, including artist **promotions**, merchandise, and music.
+    </div>
 
-</div>
-
-<div class="flex flex-wrap gap-4 md:gap-10 items-center mb-10">
-
-<Image
-  src='/img/work/giggin-audience/mock2.png'
-  alt='thumbnail 1'
-  width={350}
-  height='1'
-  class='xl:order-1 order-2'
-/>
-
-  <div class='min-w-[200px] flex-1 xl:order-2 order-1'>
-  ### Live App Control
-
-  Another React-based web application, the Live App Control, grants artists and
-  gig promoters **real-time control** over the audience experience.
-
-  Through this interface, organizers can curate content displayed on the Audience
-  App, ensuring a dynamic and engaging performance.
-
-  Furthermore, the Live App Control includes a **metronome feature** to assist
-  musicians during live performances if needed.
+    <Image
+      src='/img/work/giggin-audience/mock2.png'
+      alt='thumbnail 1'
+      width={350}
+      height='1'
+      class='order-2'
+    />
 
   </div>
 
-</div>
+  <div class="flex flex-wrap gap-4 md:gap-10 items-center mb-10">
 
-## Features
+    <Image
+      src='/img/work/giggin-audience/mock2.png'
+      alt='thumbnail 1'
+      width={350}
+      height='1'
+      class='xl:order-1 order-2'
+    />
 
-<div class='flex flex-wrap gap-8 mb-10'>
-  <div class='flex-1 min-w-[200px]'>
-  ### Lightshow
+    <div class='min-w-[200px] flex-1 xl:order-2 order-1'>
+      ### Live App Control
 
-  The app synchronizes dazzling light displays with the music, enhancing the overall concert atmosphere.
-</div>
-  <div class='flex-1 min-w-[200px]'>
-  
-### Promotional Tools
+      Another React-based web application, the Live App Control, grants artists and
+      gig promoters **real-time control** over the audience experience.
 
-Artists can leverage the platform to promote their social media profiles, merchandise, and music directly to the audience.
-</div>
-  <div class='flex-1 min-w-[200px]'>
-  ### Audience Polls
+      Through this interface, organizers can curate content displayed on the Audience
+      App, ensuring a dynamic and engaging performance.
 
-Engage concert-goers through interactive polling features, fostering a sense of community and participation.
-</div>
-</div>
+      Furthermore, the Live App Control includes a **metronome feature** to assist
+      musicians during live performances if needed.
+    </div>
+  </div>
+</Section>
 
+<Section>
+  ## Features
+  <div class='flex flex-wrap gap-8 gap-y-4'>
+    <div class='flex-1 min-w-[200px]'>
 
-<div class='mb-10'>
+      ### Lightshow
+      The app synchronizes dazzling light displays with the music, enhancing the
+      overall concert atmosphere.
+    </div>
+    <div class='flex-1 min-w-[200px]'>
 
-## Challenges
+      ### Promotional Tools
+      Artists can leverage the platform to promote their social media profiles,
+      merchandise, and music directly to the audience.
+    </div>
+    <div class='flex-1 min-w-[200px]'>
 
-- Ensuring seamless synchronization between multiple devices to maintain the immersive experience across the audience.
-- Addressing connectivity issues that may arise in certain venues to ensure uninterrupted functionality.
+      ### Audience Polls
+      Engage concert-goers through interactive polling features, fostering a sense of
+      community and participation.
+    </div>
+  </div>
+</Section>
 
-</div>
-<div class='mb-10'>
+<Section>
+  ## Challenges
 
-## Achievements
+  - Ensuring seamless synchronization between multiple devices to maintain the
+    immersive experience across the audience.
+  - Addressing connectivity issues that may arise in certain venues to ensure
+    uninterrupted functionality.
+</Section>
 
-- Optimizing the application for efficiency, resulting in a super-reduced bundle size for enhanced performance.
-- Garnering positive feedback and achieving successful performances, enhancing the reputation and credibility of the Giggin platform.
+<Section>
+  ## Achievements
 
-</div>
+  - Optimizing the application for efficiency, resulting in a super-reduced bundle
+    size for enhanced performance.
+  - Garnering positive feedback and achieving successful performances, enhancing
+    the reputation and credibility of the Giggin platform.
+</Section>
 
+<Section>
+  In conclusion, Giggin is not just a web app; it's a game-changer in the realm of
+  live entertainment, providing an unparalleled fusion of technology and music to
+  deliver unforgettable concert experiences.
+</Section>
 
-
-
-In conclusion, Giggin is not just a web app; it's a game-changer in the realm of live entertainment, providing an unparalleled fusion of technology and music to deliver unforgettable concert experiences.
